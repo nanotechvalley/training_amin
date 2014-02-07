@@ -3,5 +3,26 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  users = User.create([{ first_name: 'Chicago' }, { email: 'copenhagen@yahoo.com' }])
+puts "Successfully saving new data"
+
+users = User.create([{ first_name: 'Bokis' }, { email: 'bokis@yahoo.com' }])
+puts "Successfully saving new data"
+
+users = User.create([{ first_name: 'Cula' }, { email: 'cola@yahoo.com' }])
+puts "Successfully saving new data"
+
+users = User.create([{ first_name: 'Yuhud' }, { email: 'buli@yahoo.com' }])
+puts "Successfully saving new data"
+
+users = User.create([{ first_name: 'Helipo' }, { email: 'yes@yahoo.com' }])
+puts "Successfully saving new data"
+
+users = User.create([{ first_name: 'Gele' }, { email: 'hagen@yahoo.com' }])
+puts "Successfully saving new data"
+
+users = User.create([{ first_name: 'Nuli' }, { email: 'coagen@yahoo.com' }])
+puts "Successfully saving new data"
+
+users = User.create([{ first_name: 'Thor' }, { email: 'coki@yahoo.com' }])
+puts "Successfully saving new data"
