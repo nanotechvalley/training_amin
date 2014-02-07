@@ -81,3 +81,83 @@ Amin
 
 
 
+
+wgs-com010@wgscom010:~/training/training_amin$ rails g model product_category
+      invoke  active_record
+      create    db/migrate/20140207080800_create_product_categories.rb
+      create    app/models/product_category.rb
+      invoke    test_unit
+      create      test/models/product_category_test.rb
+      create      test/fixtures/product_categories.yml
+wgs-com010@wgscom010:~/training/training_amin$ rails g model addforeignkeytoallrelations
+      invoke  active_record
+      create    db/migrate/20140207082623_create_addforeignkeytoallrelations.rb
+      create    app/models/addforeignkeytoallrelations.rb
+      invoke    test_unit
+      create      test/models/addforeignkeytoallrelations_test.rb
+      create      test/fixtures/addforeignkeytoallrelations.yml
+wgs-com010@wgscom010:~/training/training_amin$ rails g migration addforeignkeysforallrelations
+      invoke  active_record
+      create    db/migrate/20140207090341_addforeignkeysforallrelations.rb
+
+
+wgs-com010@wgscom010:~/training/training_amin$ rake db:migrate
+==  Addforeignkeysforallrelations: migrating ==================================
+-- add_column(:users, :country_id, :integer)
+   -> 0.2546s
+-- add_column(:comments, :article_id, :integer)
+   -> 0.2348s
+-- add_column(:comments, :user_id, :integer)
+   -> 0.2280s
+-- add_column(:categories, :user_id, :integer)
+   -> 0.1934s
+==  Addforeignkeysforallrelations: migrated (0.9111s) =========================
+
+1.9.3-p484 :068 > user = User.find 5
+  User Load (0.1ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+ => #<User id: 5, first_name: "Bala", last_name: nil, email: "b@yahoo.com", username: nil, password: nil, created_at: "2014-02-06 09:19:09", updated_at: "2014-02-06 09:19:09", dateofbirth: "1994-02-07 00:00:00", age: nil, address: "Jakarta", country_id: nil> 
+1.9.3-p484 :069 > product = user.products.create(:name => "asdasdasdasdas")
+   (0.1ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO `products` (`created_at`, `name`, `updated_at`, `user_id`) VALUES ('2014-02-07 10:24:47', 'asdasdasdasdas', '2014-02-07 10:24:47', 5)
+   (58.5ms)  COMMIT
+ => #<Product id: 1, name: "asdasdasdasdas", price: nil, stock: nil, description: nil, created_at: "2014-02-07 10:24:47", updated_at: "2014-02-07 10:24:47", user_id: 5> 
+1.9.3-p484 :070 > product = user.products.create(:name => "mobil")
+   (0.2ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO `products` (`created_at`, `name`, `updated_at`, `user_id`) VALUES ('2014-02-07 10:25:20', 'mobil', '2014-02-07 10:25:20', 5)
+   (36.2ms)  COMMIT
+ => #<Product id: 2, name: "mobil", price: nil, stock: nil, description: nil, created_at: "2014-02-07 10:25:20", updated_at: "2014-02-07 10:25:20", user_id: 5> 
+1.9.3-p484 :071 > user = User.find 6
+  User Load (0.4ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1
+ => #<User id: 6, first_name: "Akala", last_name: nil, email: "a@yahoo.com", username: nil, password: nil, created_at: "2014-02-06 09:19:29", updated_at: "2014-02-06 09:19:29", dateofbirth: "2006-02-07 00:00:00", age: nil, address: nil, country_id: nil> 
+1.9.3-p484 :072 > product = user.products.create(:name => "mobil5")
+   (0.2ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO `products` (`created_at`, `name`, `updated_at`, `user_id`) VALUES ('2014-02-07 10:25:43', 'mobil5', '2014-02-07 10:25:43', 6)
+   (29.7ms)  COMMIT
+ => #<Product id: 3, name: "mobil5", price: nil, stock: nil, description: nil, created_at: "2014-02-07 10:25:43", updated_at: "2014-02-07 10:25:43", user_id: 6> 
+1.9.3-p484 :073 > user = User.find 14
+  User Load (0.4ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1
+ => #<User id: 14, first_name: "Chicago", last_name: nil, email: nil, username: nil, password: nil, created_at: "2014-02-07 02:59:28", updated_at: "2014-02-07 02:59:28", dateofbirth: nil, age: nil, address: nil, country_id: nil> 
+1.9.3-p484 :074 > product = user.products.create(:name => "motor")
+   (0.2ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO `products` (`created_at`, `name`, `updated_at`, `user_id`) VALUES ('2014-02-07 10:27:30', 'motor', '2014-02-07 10:27:30', 14)
+   (43.7ms)  COMMIT
+ => #<Product id: 4, name: "motor", price: nil, stock: nil, description: nil, created_at: "2014-02-07 10:27:30", updated_at: "2014-02-07 10:27:30", user_id: 14> 
+1.9.3-p484 :075 > product = user.products.create(:price => "120")
+   (0.2ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO `products` (`created_at`, `price`, `updated_at`, `user_id`) VALUES ('2014-02-07 10:28:31', '120', '2014-02-07 10:28:31', 14)
+   (36.1ms)  COMMIT
+ => #<Product id: 5, name: nil, price: "120", stock: nil, description: nil, created_at: "2014-02-07 10:28:31", updated_at: "2014-02-07 10:28:31", user_id: 14> 
+1.9.3-p484 :076 > user = User.find 15
+  User Load (0.4ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1
+ => #<User id: 15, first_name: nil, last_name: nil, email: "copenhagen@yahoo.com", username: nil, password: nil, created_at: "2014-02-07 02:59:28", updated_at: "2014-02-07 02:59:28", dateofbirth: nil, age: nil, address: nil, country_id: nil> 
+1.9.3-p484 :077 > product = user.products.create(:price => "128")
+   (0.2ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO `products` (`created_at`, `price`, `updated_at`, `user_id`) VALUES ('2014-02-07 10:28:59', '128', '2014-02-07 10:28:59', 15)
+   (33.0ms)  COMMIT
+ => #<Product id: 6, name: nil, price: "128", stock: nil, description: nil, created_at: "2014-02-07 10:28:59", updated_at: "2014-02-07 10:28:59", user_id: 15> 
+
+
+
+
+
+
