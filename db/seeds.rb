@@ -3,36 +3,75 @@
 #
 # Examples:
 #
-  users = User.create([{ first_name: 'Chicago' }, { email: 'copenhagen@yahoo.com' }])
+  users = User.create({ :first_name => "Chicago" ,  :email => "copenhagen@yahoo.com" })
 puts "Successfully saving new data"
 
-users = User.create([{ first_name: 'Bokis' }, { email: 'bokis@yahoo.com' }])
+users = User.create({ :first_name => "Chile" ,  :email => "cogen@yahoo.com" })
 puts "Successfully saving new data"
 
-users = User.create([{ first_name: 'Cula' }, { email: 'cola@yahoo.com' }])
+users = User.create({ :first_name => "Coo" ,  :email => "con@yahoo.com" })
 puts "Successfully saving new data"
 
-users = User.create([{ first_name: 'Yuhud' }, { email: 'buli@yahoo.com' }])
+users = User.create({ :first_name => "Cuago" ,  :email => "gen@yahoo.com" })
 puts "Successfully saving new data"
 
-users = User.create([{ first_name: 'Helipo' }, { email: 'yes@yahoo.com' }])
+users = User.create({ :first_name => "Chute" ,  :email => "copen@yahoo.com" })
 puts "Successfully saving new data"
 
-users = User.create([{ first_name: 'Gele' }, { email: 'hagen@yahoo.com' }])
+users = User.create({ :first_name => "Rago" ,  :email => "copin@yahoo.com" })
 puts "Successfully saving new data"
 
-users = User.create([{ first_name: 'Nuli' }, { email: 'coagen@yahoo.com' }])
+users = User.create({ :first_name => "Rutte" ,  :email => "coten@yahoo.com" })
 puts "Successfully saving new data"
 
-users = User.create([{ first_name: 'Thor' }, { email: 'coki@yahoo.com' }])
+
+articles = Article.create({ :descriptions => 'Lemper Gipsum' , :title => 'Semboyan' })
 puts "Successfully saving new data"
 
-articles = body.create([{ body: 'Lemper Gipsum' }, { title: 'Semboyan' }])
+articles = Article.create({ :descriptions => 'Lemper Gipsum' , :title => 'Semboyan' })
 puts "Successfully saving new data"
 
-comments = comment.create([{ comment: 'Lemper Gipsum Enakan Peuyeum' }])
+articles = Article.create({ :descriptions => 'Lemper Gipsum' , :title => 'Semboyan' })
 puts "Successfully saving new data"
 
-countries = country.create([{ country: 'Thor Serikat' }])
+articles = Article.create({ :descriptions => 'Lemper Gipsum' , :title => 'Semboyan' })
+puts "Successfully saving new data"
+
+articles = Article.create({ :descriptions => 'Lemper Gipsum' , :title => 'Semboyan' })
+puts "Successfully saving new data"
+
+
+comments = Comment.create({ :content => 'Lemper Gipsum Enakan Peuyeum' })
+puts "Successfully saving new data"
+
+comments = Comment.create({ :content => 'Balada Lupus Alay' })
+puts "Successfully saving new data"
+
+comments = Comment.create({ :content => 'Balada Lupus Alay' })
+puts "Successfully saving new data"
+
+comments = Comment.create({ :content => 'Balada Lupus Alay' })
+puts "Successfully saving new data"
+
+comments = Comment.create({ :content => 'Balada Lupus Alay' })
+puts "Successfully saving new data"
+
+
+countries = Country.create({ :name => 'Thor Serikat' })
+puts "Successfully saving new data"
+
+countries = Country.create({ :name => 'Semangka Serikat' })
+puts "Successfully saving new data"
+
+countries = Country.create({ :name => 'Republik Indonenong' })
+puts "Successfully saving new data"
+
+countries = Country.create({ :name => 'Republik Indonenong' })
+puts "Successfully saving new data"
+
+countries = Country.create({ :name => 'Republik Indonenong' })
+puts "Successfully saving new data"
+
+countries = Country.create({ :name => 'Republik Indonenong' })
 puts "Successfully saving new data"
 
