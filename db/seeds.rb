@@ -26,3 +26,13 @@ puts "Successfully saving new data"
 
 users = User.create([{ first_name: 'Thor' }, { email: 'coki@yahoo.com' }])
 puts "Successfully saving new data"
+
+articles = body.create([{ body: 'Lemper Gipsum' }, { title: 'Semboyan' }])
+puts "Successfully saving new data"
+
+comments = comment.create([{ comment: 'Lemper Gipsum Enakan Peuyeum' }])
+puts "Successfully saving new data"
+
+countries = country.create([{ country: 'Thor Serikat' }])
+puts "Successfully saving new data"
+
