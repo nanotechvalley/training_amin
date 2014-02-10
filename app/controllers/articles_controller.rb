@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+  
+  def index
+  end
+  
   def new
     
      end
@@ -11,4 +15,5 @@ class ArticlesController < ApplicationController
       
     end
     
-   
+   def destroy
+   end
