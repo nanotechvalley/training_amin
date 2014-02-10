@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+
+#attr_accessible :name, :price, :description
+
  belongs_to :user
  has_many :categories
  belongs_to :category

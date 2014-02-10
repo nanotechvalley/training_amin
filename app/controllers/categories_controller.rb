@@ -1,18 +1,20 @@
 class CategoriesController < ApplicationController
-end
-def new
-    
-     end
+  def new
+    session['baru'] = 'Bandung'
+  end
   
   def create
     
   end 
     
-    def edit
-      
-    end
+  def edit
     
-   def index
-     
-   end
+  end
+    
+  def index
+   
+  end
   
+  
+  
+end

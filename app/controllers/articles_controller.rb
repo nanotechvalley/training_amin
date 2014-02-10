@@ -1,19 +1,23 @@
 class ArticlesController < ApplicationController
   
+  layout 'articles'
+
   def index
   end
   
   def new
     
-     end
+  end
   
   def create
     
   end 
     
-    def edit
+  def edit
       
-    end
+  end
     
-   def destroy
-   end
+  def destroy
+  end
+  
+end

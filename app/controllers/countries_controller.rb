@@ -1,5 +1,5 @@
 class CountriesController < ApplicationController
-end
+
 def new
     
      end
@@ -15,3 +15,5 @@ def new
    def index
      
    end
+
+end
