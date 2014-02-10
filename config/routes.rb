@@ -1,4 +1,8 @@
 TrainingAmin::Application.routes.draw do
+  get "products/index"
+  get "products/new"
+  get "products/edit"
+  get "products/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +57,5 @@ TrainingAmin::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
 end

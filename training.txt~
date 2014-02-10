@@ -1,0 +1,118 @@
+2.1.0 :031 >   def hello_world
+2.1.0 :032?>   "olalalala"
+2.1.0 :033?>   end
+ => :hello_world 
+2.1.0 :034 > hello_world
+ => "olalalala" 
+
+==================
+1.9.3-p484 :001 > puts "amin".upcase
+AMIN
+ => nil 
+
+1.9.3-p484 :008 > puts "amin".capitalize
+Amin
+ => nil 
+
+
+1.9.3-p484 :007 > puts "amin".length
+4
+ => nil 
+
+=============================
+1.9.3-p484 :014 > a = [5,3,2]
+ => [5, 3, 2]
+
+1.9.3-p484 :016 > a.reverse
+ => [2, 3, 5] 
+
+
+
+1.9.3-p484 :020 > a.max
+ => 3 
+
+1.9.3-p484 :051 > def logic
+1.9.3-p484 :052?>   max = 0
+1.9.3-p484 :053?>   arrays = [5,4,3,2]
+1.9.3-p484 :054?>   arrays.each do |array|
+1.9.3-p484 :055 >       if max < array
+1.9.3-p484 :056?>       max = array
+1.9.3-p484 :057?>       end
+1.9.3-p484 :058?>     end
+1.9.3-p484 :059?>   return max
+1.9.3-p484 :060?>   end
+ => nil 
+1.9.3-p484 :061 > logic
+ => 5 
+
+=================================
+
+1.9.3-p484 :004 >  users= User.create({ :first_name => "Bala", :email => "b@yahoo.com"})
+   (0.2ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO `users` (`created_at`, `email`, `first_name`, `updated_at`) VALUES ('2014-02-06 09:19:09', 'b@yahoo.com', 'Bala', '2014-02-06 09:19:09')
+   (66.1ms)  COMMIT
+ => #<User id: 5, first_name: "Bala", last_name: nil, email: "b@yahoo.com", username: nil, password: nil, created_at: "2014-02-06 09:19:09", updated_at: "2014-02-06 09:19:09", dateofbirth: nil, age: nil, address: nil> 
+1.9.3-p484 :005 >  users= User.create({ :first_name => "Akala", :email => "a@yahoo.com"})
+   (0.2ms)  BEGIN
+  SQL (20.3ms)  INSERT INTO `users` (`created_at`, `email`, `first_name`, `updated_at`) VALUES ('2014-02-06 09:19:29', 'a@yahoo.com', 'Akala', '2014-02-06 09:19:29')
+   (54.8ms)  COMMIT
+ => #<User id: 6, first_name: "Akala", last_name: nil, email: "a@yahoo.com", username: nil, password: nil, created_at: "2014-02-06 09:19:29", updated_at: "2014-02-06 09:19:29", dateofbirth: nil, age: nil, address: nil> 
+1.9.3-p484 :006 >  users= User.create({ :first_name => "Cubia", :email => "c@yahoo.com"})
+   (0.2ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO `users` (`created_at`, `email`, `first_name`, `updated_at`) VALUES ('2014-02-06 09:19:54', 'c@yahoo.com', 'Cubia', '2014-02-06 09:19:54')
+   (32.5ms)  COMMIT
+ => #<User id: 7, first_name: "Cubia", last_name: nil, email: "c@yahoo.com", username: nil, password: nil, created_at: "2014-02-06 09:19:54", updated_at: "2014-02-06 09:19:54", dateofbirth: nil, age: nil, address: nil> 
+
+1.9.3-p484 :008 > User.all
+  User Load (0.4ms)  SELECT `users`.* FROM `users`
+ => #<ActiveRecord::Relation [#<User id: 5, first_name: "Bala", last_name: nil, email: "b@yahoo.com", username: nil, password: nil, created_at: "2014-02-06 09:19:09", updated_at: "2014-02-06 09:19:09", dateofbirth: nil, age: nil, address: nil>, #<User id: 6, first_name: "Akala", last_name: nil, email: "a@yahoo.com", username: nil, password: nil, created_at: "2014-02-06 09:19:29", updated_at: "2014-02-06 09:19:29", dateofbirth: nil, age: nil, address: nil>, #<User id: 7, first_name: "Cubia", last_name: nil, email: "c@yahoo.com", username: nil, password: nil, created_at: "2014-02-06 09:19:54", updated_at: "2014-02-06 09:19:54", dateofbirth: nil, age: nil, address: nil>]> 
+
+
+
+
+
+
+
+1.9.3-p484 :013 > User.delete(1)
+  SQL (16.0ms)  DELETE FROM `users` WHERE `users`.`id` = 1
+ => 0 
+1.9.3-p484 :014 > 
+
+
+
+
+
+wgs-com010@wgscom010:~/training/training_amin$ rails g model product_category
+      invoke  active_record
+      create    db/migrate/20140207080800_create_product_categories.rb
+      create    app/models/product_category.rb
+      invoke    test_unit
+      create      test/models/product_category_test.rb
+      create      test/fixtures/product_categories.yml
+wgs-com010@wgscom010:~/training/training_amin$ rails g model addforeignkeytoallrelations
+      invoke  active_record
+      create    db/migrate/20140207082623_create_addforeignkeytoallrelations.rb
+      create    app/models/addforeignkeytoallrelations.rb
+      invoke    test_unit
+      create      test/models/addforeignkeytoallrelations_test.rb
+      create      test/fixtures/addforeignkeytoallrelations.yml
+wgs-com010@wgscom010:~/training/training_amin$ rails g migration addforeignkeysforallrelations
+      invoke  active_record
+      create    db/migrate/20140207090341_addforeignkeysforallrelations.rb
+
+
+wgs-com010@wgscom010:~/training/training_amin$ rake db:migrate
+==  Addforeignkeysforallrelations: migrating ==================================
+-- add_column(:users, :country_id, :integer)
+   -> 0.2546s
+-- add_column(:comments, :article_id, :integer)
+   -> 0.2348s
+-- add_column(:comments, :user_id, :integer)
+   -> 0.2280s
+-- add_column(:categories, :user_id, :integer)
+   -> 0.1934s
+==  Addforeignkeysforallrelations: migrated (0.9111s) =========================
+
+
+
+
