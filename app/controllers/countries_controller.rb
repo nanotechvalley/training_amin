@@ -1,19 +1,42 @@
 class CountriesController < ApplicationController
 
-def new
-    
-     end
+    def new
+    @country = Country.new
+    end
   
-  def create
+    def create
+   
+    @country = Country.new(country_params)
+
+    if @country.save
+      flash[:notice] = "Selamat Sudah Disimpan"
+      redirect_to countries_path
+      return
+
+    else
+      flash[:error] = "Gagal Brooo"
+    end
+
+    render :new
     
-  end 
+    
+    end 
     
     def edit
       
     end
     
-   def index
+    def index
      
-   end
+    end
 
+
+    private
+    
+    def country_params
+      params.require(:country).permit(:code, :name)
+    end
+
+    
+    
 end

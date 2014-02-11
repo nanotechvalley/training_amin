@@ -1,0 +1,23 @@
+<h1>Countries#now</h1>
+<p>Find me in app/views/countries/new.html.erb</p>
+<%=session['Baru']%>
+
+<%= form_for @country do |f| %>
+
+ Code: <%= f.number_field :code %>
+
+ Name : <%= f.text_field :name %>
+
+ 
+
+ <%=f.submit :create%>
+
+	<%= link_to "Back to Index", "/countries", :class => "new-article" %>
+
+
+
+<%= raw(list_categories) %>
+
+
+
+<% end %>
