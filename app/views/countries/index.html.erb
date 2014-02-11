@@ -3,3 +3,25 @@
 
 
       <%= flash[:notice] %>
+
+
+<table border = "1">
+
+<tr>
+ 	<TD> Code</TD>
+ 	<TD> Countries </TD>
+ 	
+</tr>
+
+<% @countries.each do |country|%>
+
+<tr>
+
+	<TD> <%= country.code %> </TD>
+	<TD> <%= country.name %> </TD>
+</tr>
+
+<%end%>
+
+
+ </table>

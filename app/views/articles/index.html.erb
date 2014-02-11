@@ -3,5 +3,32 @@
 <p>Find me in app/views/articles/index.html.erb</p>
 
 
-      <%= flash[:notice] = "Selamat Sudah Disimpan"%>
+      <%= flash[:notice] %>
+
+
+<table border = "1">
+
+ <tr>
+ 	<TD> Title</TD>
+ 	<TD> Descriptions </TD>
+ 	<TD> User </TD>
+ 	
+
+ </tr>
+
+	<% @articles.each do |article|%>
+
+<tr>
+
+	<TD> <%= article.title%> </TD>
+	<TD> <%= article.descriptions %> </TD>
+	<TD> <%= article.user%> </TD>
+	
+
+
+</tr>
+<%end%>
+
+
+ </table>
       

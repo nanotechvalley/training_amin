@@ -3,4 +3,32 @@
 
 
       <%= flash[:notice] %>
+
+<table border = "1">
+
+ <tr>
+ 	<TD> First Name</TD>
+ 	<TD> Last Name </TD>
+ 	<TD> Email </TD>
+ 	<TD> User Name </TD>
+ 	<TD> DateofBirth </TD>
+
+ </tr>
+
+<% @users.each do |user| %>
+
+<tr>
+
+	<TD> <%= user.first_name%> </TD>
+	<TD> <%= user.last_name %> </TD>
+	<TD> <%= user.email%> </TD>
+	<TD> <%= user.username%> </TD>
+	<TD> <%= user.dateofbirthy%> </TD>
+
+
+</tr>
+<%end%>
+
+
+ </table>
       

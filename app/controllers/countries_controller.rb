@@ -27,6 +27,8 @@ class CountriesController < ApplicationController
     end
     
     def index
+
+      @countries = Country.all
      
     end
 
