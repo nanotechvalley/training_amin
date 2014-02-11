@@ -1,20 +1,37 @@
 class UsersController < ApplicationController
 
 
-def new
-    
+    def new
+    @user = User.new 
      end
   
-  def create
+    def create
+    @user = User.new(user_params)
     
-  end 
+    if @user.save
+      flash[:notice] = "Selamat Sudah Disimpan"
+      redirect_to users_path
+      return
+
+    else
+      flash[:error] = "Gagal Brooo"
+    end
+
+    render :new
+    
+    end 
     
     def edit
       
     end
     
-   def index
+    def index
      
-   end
+    end
 
-end
+    private
+
+    def user_params
+      params.require(:user).permit(:first_name, :email, :username, :password, :dateofbirth, :last_name)
+    end
+    end

@@ -1,0 +1,24 @@
+<h1>Articles#now</h1>
+<p>Find me in app/views/articles/now.html.erb</p>
+<%=session['Baru']%>
+
+<%= form_for @article do |f| %>
+
+ Title: <%= f.text_field :title %>
+
+ Descriptions : <%= f.text_area :descriptions %>
+
+ Rating : <%= f.number_field :rating %>
+
+ User ID : <%= f.text_area :user_id %>
+
+ <%=f.submit :create%>
+
+	<%= link_to "Back to Index", "/articles", :class => "new-article" %>
+
+
+<%= raw(list_categories) %>
+
+
+
+<% end %>

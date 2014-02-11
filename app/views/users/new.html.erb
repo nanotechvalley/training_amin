@@ -1,0 +1,28 @@
+<h1>Users#now</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+<%=session['Baru']%>
+
+<%= form_for @user do |f| %>
+
+ Name: <%= f.text_field :first_name %>
+
+ Last Name : <%= f.text_field :last_name %>
+
+ Email : <%= f.text_field :email %>
+
+ Password : <%= f.password_field :password %>
+ 
+ DateBirth : <%= f.date_field :dateofbirth %>
+
+ <%=f.submit :create%>
+
+	<%= link_to "Back to Index", "/users", :class => "new-article" %>
+
+<%= image_tag '1.jpg', :class => "image", :alt => 'pictures', :width => 200 %>
+
+
+<%= raw(list_categories) %>
+
+
+
+<% end %>
