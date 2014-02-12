@@ -33,6 +33,19 @@ class ArticlesController < ApplicationController
   end
     
   def destroy
+    @article = Article.find_by_id(params[:id])
+
+      if @article.destroy
+        flash[:notice] = "Selamat Sudah Didelete"
+             
+      else
+        flash[:error] = "Gagal Delete Brooo"
+
+      end
+
+      redirect_to article_path
+
+
   end
   
   private

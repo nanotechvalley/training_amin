@@ -19,10 +19,10 @@
 	<% @articles.each do |article|%>
 
 <tr>
-
-	<TD> <%= article.title%> </TD>
+	<TD> <%= link_to article.title, product_path(article.id)%> </TD>
 	<TD> <%= article.descriptions %> </TD>
 	<TD> <%= article.user%> </TD>
+	<td> <%= link_to "delete" , article_path(article.id), :confirm => "Serius neh?", :method => "delete" %> <td> 
 	
 
 

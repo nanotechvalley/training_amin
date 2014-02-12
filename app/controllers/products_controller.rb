@@ -21,25 +21,54 @@ class ProductsController < ApplicationController
     
   end 
     
-    def edit
-      
+  def edit
+    
+  end
+
+  def update
+    if @product.save
+        flash[:notice] = "Selamat Sudah Diedit"
+        redirect_to products_path
+        return
+    else
+      flash[:error] = "Gagal Edit Brooo"
     end
+  end
+
+    
     
     def index
       @products = Product.all 
+    end
       
+    def destroy
+      @product = Product.find_by_id(params[:id])
+
+      if @product.destroy
+        flash[:notice] = "Selamat Sudah Didelete"
+             
+      else
+        flash[:error] = "Gagal Delete Brooo"
+
+      end
+
+      redirect_to products_path
+      
+
+    end
+    
+    def show
+       @product = Product.find_by_id(params[:id])
     end
 
     private
 
     def find_product
-    	@product = Product.find_by_id(1) rescue nil
+    	@product = Product.find_by_id(1) 
     end
 
     def product_params
       params.require(:product).permit(:name, :price, :stock, :description)
     end
-
-
-
+    
 end

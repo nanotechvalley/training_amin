@@ -2,3 +2,17 @@
 <p>Find me in app/views/products/edit.html.erb</p>
 <%= @product %>
 
+
+<%= form_for @product do |f| %>
+
+ Name: <%= f.text_field :name %>
+
+ Price : <%= f.text_field :price %>
+
+ Stock : <%= f.text_field :stock %>
+
+ Description : <%= f.text_area :description %>
+
+ <%=f.submit :create%>
+
+	<%= link_to "Back to Index", "/products", :class => "new-article" %>

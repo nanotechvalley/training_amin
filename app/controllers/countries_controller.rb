@@ -32,6 +32,21 @@ class CountriesController < ApplicationController
      
     end
 
+    def destroy
+      @country = Country.find_by_id(params[:id])
+
+      if @country.destroy
+        flash[:notice] = "Selamat Sudah Didelete"
+             
+      else
+        flash[:error] = "Gagal Delete Brooo"
+
+      end
+
+      redirect_to country_path
+
+    end
+
 
     private
     

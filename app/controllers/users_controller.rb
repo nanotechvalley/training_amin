@@ -24,6 +24,22 @@ class UsersController < ApplicationController
     def edit
       
     end
+
+    def destroy
+
+      @user = User.find_by_id(params[:id])
+
+      if @user.destroy
+        flash[:notice] = "Selamat Sudah Didelete"
+             
+      else
+        flash[:error] = "Gagal Delete Brooo"
+
+      end
+
+      redirect_to countries_path
+
+    end
     
     def index
       @users = User.all

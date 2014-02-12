@@ -17,8 +17,10 @@
 
 <tr>
 
-	<TD> <%= country.code %> </TD>
+	<TD> <%= link_to country.code, country_path(country.id)%> </TD>
 	<TD> <%= country.name %> </TD>
+	<td> <%= link_to "delete" , country_path(country.id), :confirm => "Serius neh?", :method => "delete" %> </td> 
+
 </tr>
 
 <%end%>

@@ -24,6 +24,7 @@
 	<TD> <%= user.email%> </TD>
 	<TD> <%= user.username%> </TD>
 	<TD> <%= user.dateofbirth%> </TD>
+	<td> <%= link_to "delete" , user_path(user.id), :confirm => "Serius neh?", :method => "delete" %> <td> 
 
 
 </tr>
