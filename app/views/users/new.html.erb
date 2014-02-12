@@ -2,6 +2,35 @@
 <p>Find me in app/views/users/new.html.erb</p>
 <%=session['Baru']%>
 
+<% if @user.errors.any? %>
+
+ <div id="Error Explanation">
+
+ <h2>
+
+ 
+
+<%= pluralize(@user.errors.count, "error") %> 
+
+ </h2>
+
+ <ul>
+
+ 
+
+<% @user.errors.full_messages.each do |msg| %>
+
+ <li><%= msg %></li>
+
+ <% end %>
+
+ </ul>
+
+ </div>
+
+<% end %>
+
+
 <%= form_for @user do |f| %>
 
  Name: <%= f.text_field :first_name %>

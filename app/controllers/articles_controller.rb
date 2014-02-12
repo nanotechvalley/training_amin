@@ -27,6 +27,19 @@ class ArticlesController < ApplicationController
     
     
   end 
+
+  def show
+    @comments = @article.comments
+
+  end
+
+
+
+  <% @comments.each do |comment| %>
+    <%= comment.content %>
+
+  <%> end <%>
+
     
   def edit
       

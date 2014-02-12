@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
       end
 
-      redirect_to countries_path
+      redirect_to users_path
 
     end
     
