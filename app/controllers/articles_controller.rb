@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.where("rating > ?", 1)
                         .limit(6)
+                        .select("title, descriptions")
   end
 
   

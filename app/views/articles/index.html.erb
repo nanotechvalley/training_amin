@@ -11,9 +11,6 @@
  <tr>
  	<TD> Title</TD>
  	<TD> Descriptions </TD>
- 	<TD> User </TD>
- 	<TD> Rating </TD>
- 	
 
  </tr>
 
@@ -22,7 +19,6 @@
 <tr>
 	<TD> <%= link_to article.title, product_path(article.id)%> </TD>
 	<TD> <%= article.descriptions %> </TD>
-	<TD> <%= article.user%> </TD>
 	<td> <%= link_to "delete" , article_path(article.id), :confirm => "Serius neh?", :method => "delete" %> <td> 
 	
 

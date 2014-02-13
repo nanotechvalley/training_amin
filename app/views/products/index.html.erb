@@ -11,7 +11,7 @@
  	<TD> Price </TD>
  	<TD> Stock </TD>
  	<TD> Description</TD>
- 	<TD> User </TD>
+ 
 
  </tr>
 
@@ -23,7 +23,6 @@
 	<TD> <%= product.price%> </TD>
 	<TD> <%= product.stock%> </TD>
 	<TD> <%= product.description%> </TD>
-	<TD> <%= product.user_id%> </TD>
 	<td> <%= link_to "edit" , edit_product_path(product.id)%> <td>
 	<td> <%= link_to "delete" , product_path(product.id), :confirm => "Serius neh?", :method => "delete" %> <td> 
 
