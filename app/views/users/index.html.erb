@@ -8,11 +8,9 @@
 
  <tr>
  	<TD> First Name</TD>
- 	<TD> Last Name </TD>
  	<TD> Email </TD>
  	<TD> User Name </TD>
- 	<TD> DateofBirth </TD>
-
+ 	<TD> Age </TD>
  </tr>
 
 <% @users.each do |user| %>
@@ -20,10 +18,9 @@
 <tr>
 
 	<TD> <%= user.first_name%> </TD>
-	<TD> <%= user.last_name %> </TD>
-	<TD> <%= user.email%> </TD>
+	<TD> <%= user.email %> </TD>
 	<TD> <%= user.username%> </TD>
-	<TD> <%= user.dateofbirth%> </TD>
+	<TD> <%= user.age%> </TD>
 	<td> <%= link_to "delete" , user_path(user.id), :confirm => "Serius neh?", :method => "delete" %> <td> 
 
 

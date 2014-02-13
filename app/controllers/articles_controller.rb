@@ -3,8 +3,10 @@ class ArticlesController < ApplicationController
   layout 'articles'
 
   def index
-    @articles = Article.all
+    @articles = Article.where("rating > ?", 1)
+                        .limit(6)
   end
+
   
   def new
     @article = Article.new
@@ -32,15 +34,7 @@ class ArticlesController < ApplicationController
     @comments = @article.comments
 
   end
-
-
-
-  <% @comments.each do |comment| %>
-    <%= comment.content %>
-
-  <%> end <%>
-
-    
+ 
   def edit
       
   end

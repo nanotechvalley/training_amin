@@ -38,7 +38,8 @@ class ProductsController < ApplicationController
     
     
     def index
-      @products = Product.all 
+      @products = Product.where("price > ?", 10000)
+                          .limit(5)
     end
       
     def destroy

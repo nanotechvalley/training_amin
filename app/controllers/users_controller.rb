@@ -42,7 +42,10 @@ class UsersController < ApplicationController
     end
     
     def index
-      @users = User.all
+      @users = User.select("first_name, email, age, username")
+                  .where("age > ?", 10)
+                  .order("first_name ASC")
+                  .limit(11)
            
     end
 
