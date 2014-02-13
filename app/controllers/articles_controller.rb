@@ -3,9 +3,9 @@ class ArticlesController < ApplicationController
   layout 'articles'
 
   def index
-    @articles = Article.where("rating > ?", 1)
-                        .limit(6)
-                        .select("title, descriptions")
+    @articles = Article.where("descriptions LIKE '%Lemper%'")
+                       .limit(6)
+                       .select("title, descriptions")
   end
 
   

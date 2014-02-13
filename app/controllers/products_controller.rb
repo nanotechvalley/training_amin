@@ -38,8 +38,9 @@ class ProductsController < ApplicationController
     
     
     def index
-      @products = Product.where("price > ?", 10000)
-                          .limit(5)
+      @products = Product.limit(5)
+                          .select("name, price, stock, descriptions")
+                          .where("name LIKE %Pot%")
     end
       
     def destroy

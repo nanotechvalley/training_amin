@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
 
     def new
-    @country = Country.new
+    @countries = Country.new
     end
   
     def create
@@ -28,7 +28,7 @@ class CountriesController < ApplicationController
     
     def index
 
-      @countries = Country.all
+      @countries = Country.where("country LIKE '%Serikat%'")
      
     end
 
